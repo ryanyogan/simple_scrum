@@ -1,6 +1,7 @@
 defmodule SimpleScrum.User do
-  use Ecto.Schema
-  import Ecto.Changeset
+  use SimpleScrum.Web, :model
+
+  @derive {Poision.Encoder, only: [:id, :first_name, :last_name, :email]}
 
   schema "users" do
     field :first_name, :string
