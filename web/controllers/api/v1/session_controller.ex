@@ -18,4 +18,10 @@ defmodule SimpleScrum.SessionController do
         |> render("error.json")
     end
   end
+
+  def unauthenticated(conn, _params) do
+    conn
+    |> put_status(:forbidden)
+    |> render(SimpleScrum.SessionView, "fobidden.json", error: "Note Authenticated")
+  end
 end
