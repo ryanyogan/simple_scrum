@@ -11,6 +11,8 @@ defmodule SimpleScrum.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.LoadResource
   end
 
   scope "/api", SimpleScrum do
@@ -18,6 +20,9 @@ defmodule SimpleScrum.Router do
 
     scope "/v1" do
       post "/registration", RegistrationController, :create
+
+      post "/sessions", SessionController, :create
+      delete "/session", SessionController, :delete
     end
   end
 
