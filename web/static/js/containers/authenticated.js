@@ -15,14 +15,11 @@ class AuthenticatedContainer extends Component {
   }
 
   render() {
-    return (
-      <div></div>
-    )
+    return null;
   }
 }
 
-const mapStateToProps = (state) => {
-  currentUser: state.session.currentUser,
-});
+const mapStateToProps = (state) =>
+  currentUser: state.session.currentUser;
 
 export default connect(mapStateToProps)(AuthenticatedContainer);
