@@ -1,0 +1,28 @@
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { routeActions } from 'react-router-redux';
+
+class AuthenticatedContainer extends Component {
+  componentDidMount() {
+    const { dispatch, currentUser } = this.props;
+
+    if (localStorage.getItem('phoenixAuthToken')) {
+      dispatch(Actions.currentUser());
+    } else {
+      dispatch(routeActions.push('/sign_up'));
+    }
+  }
+
+  render() {
+    return (
+      <div></div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  currentUser: state.session.currentUser,
+});
+
+export default connect(mapStateToProps)(AuthenticatedContainer);

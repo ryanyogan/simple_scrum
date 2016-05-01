@@ -28027,16 +28027,39 @@
 
 	var _main2 = _interopRequireDefault(_main);
 
+	var _authenticated = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../containers/authenticated\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _authenticated2 = _interopRequireDefault(_authenticated);
+
+	var _home = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../views/home\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _home2 = _interopRequireDefault(_home);
+
 	var _new = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../views/registrations/new\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var _new2 = _interopRequireDefault(_new);
+
+	var _new3 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../views/sessions/new\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _new4 = _interopRequireDefault(_new3);
+
+	var _show = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../views/boards/show\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _show2 = _interopRequireDefault(_show);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { component: _main2.default },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _new2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/sign_up', component: RegistrationNew }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/sign_in', component: _new4.default }),
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _authenticated2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/boards/:id', component: _show2.default })
+	  )
 	);
 
 /***/ }
