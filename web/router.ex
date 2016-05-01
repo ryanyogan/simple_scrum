@@ -25,6 +25,8 @@ defmodule SimpleScrum.Router do
       delete "/session", SessionController, :delete
 
       get "/current_user", CurrentUserController, :show
+
+      resources "boards", BoardController, only: [:index, :create]
     end
   end
 
