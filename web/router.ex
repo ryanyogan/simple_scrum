@@ -23,6 +23,8 @@ defmodule SimpleScrum.Router do
 
       post "/sessions", SessionController, :create
       delete "/session", SessionController, :delete
+
+      get "/current_user", CurrentUserController, :show
     end
   end
 
