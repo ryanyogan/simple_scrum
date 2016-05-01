@@ -99,8 +99,8 @@ class RegistrationsNew extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  errors: state.registration.errors,
-});
+const mapStateToProps = (state) => (
+  { errors: state.registration.errors }
+);
 
 export default connect(mapStateToProps)(RegistrationsNew);

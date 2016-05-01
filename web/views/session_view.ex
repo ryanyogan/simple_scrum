@@ -2,7 +2,7 @@ defmodule SimpleScrum.SessionView do
   use SimpleScrum.Web, :view
 
   def render("show.json", %{jwt: jwt, user: user}) do
-    ${
+    %{
       jwt: jwt,
       user: user
     }
